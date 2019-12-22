@@ -1,0 +1,23 @@
+#!/bin/bash
+clear
+echo "GeoIP  (Y)  by Chris Larry"
+echo ""
+cat earth
+
+echo ""
+echo ""
+echo "Give me the domain name:"
+
+read domain
+ping -c 2 $domain | head -2 | tail -1 | awk '{print $5}' | sed 's/[(:)]//g'
+
+echo ""
+
+echo "Give me the ip you want to locate:"
+
+
+read ip
+
+curl ipinfo.io/$ip
+
+
