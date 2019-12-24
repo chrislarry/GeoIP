@@ -1,3 +1,6 @@
 # GeoIP
 
-you need linux with nmap, curl & ping to run the script
+usage: ./geoip google.com
+
+
+dependencies: nmap, curl, ping
