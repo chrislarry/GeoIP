@@ -1,0 +1,34 @@
+#!/bin/bash
+clear
+echo "GeoIP  (Y)  by Chris Larry"
+echo ""
+cat earth
+
+echo ""
+echo "http://$1"
+echo ""
+
+ipaddr=$(ping -c 2 $1 | head -2 | tail -1 | awk '{print $5}' | sed 's/[(:)]//g')
+
+echo "IP Address: $ipaddr"
+echo ""
+
+curl ipinfo.io/$ipaddr
+
+echo ""
+echo ""
+echo "OS type & open ports"
+echo ""
+sudo nmap -O $ipaddr
+echo ""
+echo ""
+#echo "Netcat"
+#nc -z -v -n $ipaddr 1-10000
+#echo ""
+#read -p "Press enter to continue with WhoIs..."
+#whois $1
+
+#echo ""
+#read -p "Press enter to continue with Traceroute..."
+
+#traceroute $1
