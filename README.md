@@ -1,1 +1,3 @@
-you need linux with curl & ping to run the script.
+# GeoIP
+
+you need linux with nmap, curl & ping to run the script
